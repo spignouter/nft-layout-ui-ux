@@ -1,0 +1,57 @@
+@@include('html/head.html', { "title": "Главная" })
+<main>
+  <div class="first">
+    @@include('html/header.html', {})
+    <div class="container">
+      <div class="first__main">
+        <div class="first__item">
+          <h1 class="h1">
+            Explore, Buy and Sell the <span class="">Best NFTs!</span>
+          </h1>
+          <div class="first__btns">
+            <button class="first__btn">Explore</button>
+            <button class="first__btn2">Create</button>
+          </div>
+          <div class="first__numbers">
+            <div class="first__number">
+              <p>32k+</p>
+              Artworks
+            </div>
+            <div class="first__number">
+              <p>20k+</p>
+              Auctions
+            </div>
+            <div class="first__number">
+              <p>12k+</p>
+              Creators
+            </div>
+          </div>
+        </div>
+        <div class="first__nft">
+          <div class="first-nft__header">
+            <div class="">
+              <p class="nft-header__title">Current bid</p>
+              <p class="nft-header__number">0.99 ETH</p>
+            </div>
+            <div class="">
+              <p class="nft-header__title">Ends in</p>
+              <p class="nft-header__number">25 hrs</p>
+            </div>
+          </div>
+          <div class="first-nft__footer">
+            <div class="">
+              <p class="nft-footer__title">Artist</p>
+              <p class="nft-footer__nick">@wzard</p>
+            </div>
+            <button class="first-nft__btn">Start Bid</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="first__arrow-btn">
+      <img src="img/icons.svg#arrow-down" alt="arrow-down" />
+    </button>
+  </div>
+</main>
+@@include('html/footer.html', {})
