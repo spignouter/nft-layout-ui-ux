@@ -30,3 +30,60 @@ button {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 85px;
+  .title {
+    font-family: 'Oxanium';
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 130px;
+    color: $white2;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateX(-36%);
+      background-color: $purple;
+      width: 110px;
+      height: 110px;
+      // скругление границ элемента
+      border-radius: 50%;
+    }
+    // span нужен для того что бы текст вытащить на передний план, так как псевдо элемент его закроет
+    span {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    &_purple {
+      &:after {
+        background: $purple;
+      }
+    }
+
+    &_red {
+      &:after {
+        background: $red;
+      }
+    }
+  }
+}
+
+.swiper {
+  padding-top: 100px !important;
+  // что бы свайпер выходил за пределы контейнера
+  overflow: visible !important;
+}
+
+.margin-bottom_25px {
+  margin-bottom: 25px;
+}
+
+.margin-bottom_175px {
+  margin-bottom: 175px;
+}

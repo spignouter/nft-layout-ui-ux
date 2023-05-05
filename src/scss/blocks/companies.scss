@@ -1,8 +1,12 @@
-.companies__main {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  img {
-    width: 20%;
+.companies {
+    margin-top: 250px;
+    margin: 250px 0 160px;
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      width: 20%;
+    }
   }
 }

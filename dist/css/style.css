@@ -700,6 +700,55 @@ button {
   margin: 0 auto;
 }
 
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 85px;
+}
+.title-wrapper .title {
+  font-family: "Oxanium";
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 130px;
+  color: #f5fbf2;
+  position: relative;
+}
+.title-wrapper .title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-36%);
+  background-color: #8613a5;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+.title-wrapper .title span {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.title-wrapper .title_purple:after {
+  background: #8613a5;
+}
+.title-wrapper .title_red:after {
+  background: #E03054;
+}
+
+.swiper {
+  padding-top: 100px !important;
+  overflow: visible !important;
+}
+
+.margin-bottom_25px {
+  margin-bottom: 25px;
+}
+
+.margin-bottom_175px {
+  margin-bottom: 175px;
+}
+
 /**
  * Swiper 7.0.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -916,16 +965,20 @@ button {
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  top: 0;
+  width: 54px;
+  height: 54px;
+  overflow: hidden;
   z-index: 10;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+.swiper-button-prev img,
+.swiper-button-next img {
+  transform: scale(5);
 }
 @media (max-width: 600px) {
   .swiper-button-prev,
@@ -963,13 +1016,11 @@ button {
 
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
-  left: 20px;
+  right: 100px;
 }
-@media (max-width: 1400px) {
-  .swiper-button-prev,
-  .swiper-rtl .swiper-button-next {
-    left: 0;
-  }
+.swiper-button-prev img,
+.swiper-rtl .swiper-button-next img {
+  transform: scale(5) rotate(180deg);
 }
 
 .swiper-button-next,
@@ -1074,7 +1125,7 @@ button {
   transform: translate(-50%, -50%);
   width: 22px;
   height: 22px;
-  border: 1px solid #531fb5;
+  border: 1px solid #8613a5;
   display: none;
   border-radius: 50%;
 }
@@ -1093,7 +1144,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #531fb5;
+  background-color: #8613a5;
 }
 .swiper-pagination-bullet-active:after {
   display: block;
@@ -2616,11 +2667,192 @@ button.swiper-pagination-bullet {
   color: #000000;
 }
 
-.companies__main {
+.companies {
+  margin-top: 250px;
+  margin: 250px 0 160px;
+}
+.companies .main {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.companies__main img {
+.companies .main img {
   width: 20%;
+}
+
+.auctions {
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+.auctions-item {
+  background: #3d2942;
+  padding: 32px;
+}
+.auctions-item__img {
+  position: relative;
+}
+.auctions-item__img img {
+  object-fit: cover;
+}
+.auctions-item__img div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(125.33deg, #8613a5 18.61%, rgba(250, 250, 250, 0.65) 137.4%);
+  opacity: 0.95;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(22.5px);
+  border-radius: 0px;
+  padding: 15px 45px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  color: #f5fbf2;
+}
+.auctions-item .auctions-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0;
+}
+.auctions-item .auctions-profile__guy {
+  display: flex;
+  align-items: center;
+}
+.auctions-item .auctions-profile__guy img {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+  width: 64px;
+  height: 64px;
+}
+.auctions-item .auctions-profile__guy__owner {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 35px;
+  color: #f5fbf2;
+}
+.auctions-item .auctions-profile__guy__nick {
+  font-size: 20px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  color: #bdaac1;
+}
+.auctions-item .auctions-profile .auctions-profile__likes {
+  display: flex;
+  align-items: center;
+}
+.auctions-item .auctions-profile .auctions-profile__likes img {
+  width: 28px;
+  transform: scale(4);
+}
+.auctions-item .auctions-profile .auctions-profile__likes span {
+  font-size: 32px;
+  line-height: 35px;
+  color: #76607a;
+}
+.auctions-item .auctions__bid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auctions-item .auctions__bid .auctions-bid__title {
+  font-size: 24px;
+  line-height: 35px;
+  color: #c6bfc8;
+}
+.auctions-item .auctions__bid .auctions-bid__price {
+  font-family: "Oxanium";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+}
+.auctions-item .auctions__btn {
+  margin-top: 40px;
+  width: 100%;
+  display: block;
+  background: rgba(233, 215, 167, 0.1);
+  border: 1px solid #fde8b3;
+  padding: 21px 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+.auctions .auctions__view-all {
+  margin: 84px auto 0;
+  padding: 24px 64px;
+  border: 1px solid #ffce4e;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.how {
+  padding-top: 185px;
+}
+
+.how__title {
+  text-align: center;
+  font-family: "Oxanium";
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 130px;
+  color: #f5fbf2;
+}
+
+.how__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.how__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.how__item:last-child .how__icon:after {
+  display: none;
+}
+
+.how__icon {
+  background: #372839;
+  border-radius: 50%;
+  width: 106px;
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+.how__icon img {
+  transform: scale(2.5);
+}
+.how__icon:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translateY(-50%) translateX(100%);
+  background: url("../img/how-elem.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 165px;
+  height: 10px;
+}
+
+.how__sub-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #ffce4e;
 }
