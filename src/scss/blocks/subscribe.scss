@@ -1,0 +1,46 @@
+.subscribe {
+  background: url('../img/sub.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 117px 0;
+  &__main {
+    div {
+      display: flex;
+      border: 1px solid #e7b226;
+      width: 680px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    font-family: 'Oxanium';
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 130px;
+    text-align: center;
+    color: #f5fbf2;
+  }
+  &__input {
+    background: none;
+    font-size: 24px;
+    line-height: 35px;
+    color: $white;
+    border: 0;
+    outline: 0;
+    padding: 30px 15px 30px 50px;
+    flex-grow: 1;
+    &::placeholder {
+      color: #a48ea9;
+    }
+  }
+  &__btn {
+    display: block;
+    background: #e7b226;
+    min-height: 100%;
+    width: 244px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    color: #251928;
+  }
+}

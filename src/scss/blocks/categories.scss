@@ -1,63 +1,67 @@
-.popular {
-  //overflow: hidden;
-  //padding-bottom: 80px;
+.categories {
+  overflow: hidden;
+  padding-bottom: 80px;
 
-  .main {
-    position: relative;
-    // этот код нужен для затемнения элемента в слайдере.
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      background: linear-gradient(to left, rgba(#000, 0.7), rgba(#000, 0));
-      filter: blur(8px);
-      -webkit-filter: blur(8px);
-      z-index: 2;
-      .popular-slider {
-        padding: 0 !important;
-      }
-    }
-
+  .categories-slide {
+    // padding-top: 0;
     .item {
       background: #3d2942;
       padding: 32px;
+
       &__img {
         position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          opacity: 0;
+          transition: all, 0.3s;
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+          }
+          button {
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
 
         img {
           //  object-fit определяет, каким образом содержимое замещаемых элементов будет подогнано к краям контейнера тега в случае, когда для элемента заданы ширина и высота, отличные от его собственных размеров.
           // cover 	Содержимое элемента обрезается, выравниваясь по центру с сохранением пропорций таким образом, чтобы полностью заполнить область контейнера.
-          // object-fit: cover;
-          max-height: 270px;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          display: block;
         }
-        div {
+
+        button {
           position: absolute;
-          // значение 0 привязывает элемент к точки с координатами 0
-          bottom: 0;
-          left: 0;
-          // градиент
-          background: linear-gradient(
-            125.33deg,
-            #8613a5 18.61%,
-            rgba(250, 250, 250, 0.65) 137.4%
-          );
-          // прозрачность
-          opacity: 0.95;
-          // тень
-          box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.12);
-          // позволяет применять визуальные эффекты.
+          top: 50%;
+          left: 50%;
+          opacity: 0;
+          pointer-events: none;
+          transform: translate(-50%, -50%);
+          background: #ffce4e;
           backdrop-filter: blur(22.5px);
-          // закругление границ
-          border-radius: 0px;
-          padding: 15px 45px;
           font-weight: 600;
           font-size: 24px;
-          line-height: 35px;
-          letter-spacing: 0.02em;
-          color: #f5fbf2;
+          line-height: 28px;
+          text-align: center;
+          color: #000000;
+          padding: 21px 58px;
+          // свойство анимации, что бы кнопка появлялась постепенно
+          transition: all 0.3s;
+          // что бы кнопка была впереди затемнения
+          z-index: 2;
+          // что бы текст не переносился
+          white-space: nowrap;
         }
       }
 
@@ -65,7 +69,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 20px;
+        // плохое решение
+        margin: 28px 0;
 
         .guy {
           display: flex;
@@ -108,44 +113,63 @@
             transform: scale(4);
           }
           span {
-            font-size: 20px;
+            font-size: 32px;
             line-height: 35px;
             color: #76607a;
           }
         }
       }
+
+      .bid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__title {
+          font-size: 24px;
+          line-height: 35px;
+          color: #c6bfc8;
+        }
+
+        &__price {
+          font-family: 'Oxanium';
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 35px;
+        }
+      }
+
+      &__btn {
+        // дурно так делать
+        margin-top: 40px;
+
+        width: 100%;
+        display: block;
+        background: rgba(233, 215, 167, 0.1);
+        border: 1px solid #fde8b3;
+        padding: 21px 0;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 0.05em;
+        color: $white;
+      }
     }
 
-    .swiper-button-prev2,
-    .swiper-button-next2 {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .swiper-button-prev2 {
-      left: 0;
-    }
-    .swiper-button-next2 {
-      right: 0;
-    }
-
-    .swiper-button-prev2.swiper-button-disabled,
-    .swiper-button-next2.swiper-button-disabled {
-      display: none;
-      cursor: auto;
-      pointer-events: none;
+    &__view-all {
+      // так делать не хорошо
+      margin: 84px auto 0;
+      padding: 24px 64px;
+      border: 1px solid #ffce4e;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 35px;
+      letter-spacing: 0.05em;
+      display: block;
     }
   }
+}
 
-  &__view-all {
-    // так делать не хорошо
-    margin: 84px auto 0;
-    padding: 24px 64px;
-    border: 1px solid #ffce4e;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
-    letter-spacing: 0.05em;
-    display: block;
-  }
+.profile_margin_28px_0 {
+  margin: 28px 0;
 }

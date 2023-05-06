@@ -2,7 +2,7 @@
   overflow: hidden;
   padding-bottom: 80px;
 
-  &-item {
+  .item {
     background: #3d2942;
     padding: 32px;
     &__img {
@@ -40,14 +40,14 @@
       }
     }
 
-    .auctions-profile {
+    .profile {
       display: flex;
       align-items: center;
       justify-content: space-between;
       // плохое решение
       margin: 28px 0;
 
-      &__guy {
+      .guy {
         display: flex;
         align-items: center;
         img {
@@ -79,7 +79,7 @@
         }
       }
 
-      .auctions-profile__likes {
+      .likes {
         display: flex;
         align-items: center;
         img {
@@ -95,18 +95,18 @@
       }
     }
 
-    .auctions__bid {
+    .bid {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .auctions-bid__title {
+      &__title {
         font-size: 24px;
         line-height: 35px;
         color: #c6bfc8;
       }
 
-      .auctions-bid__price {
+      &__price {
         font-family: 'Oxanium';
         font-weight: 700;
         font-size: 24px;
@@ -114,7 +114,7 @@
       }
     }
 
-    .auctions__btn {
+    &__btn {
       // дурно так делать
       margin-top: 40px;
 
@@ -131,7 +131,7 @@
     }
   }
 
-  .auctions__view-all {
+  &__view-all {
     // так делать не хорошо
     margin: 84px auto 0;
     padding: 24px 64px;
@@ -142,4 +142,8 @@
     letter-spacing: 0.05em;
     display: block;
   }
+}
+
+.profile_margin_28px_0 {
+  margin: 28px 0;
 }

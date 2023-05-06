@@ -1,0 +1,87 @@
+.creators {
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 56px 72px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #302034;
+    box-shadow: inset 2px 0px 0px #e03054;
+    padding: 26px 30px;
+    img {
+      display: block;
+      border-radius: 50%;
+      // определяет, необходимо ли для переполненного блочного элемента содержимое обрезать, предоставить полосы прокрутки или просто отобразить.
+      overflow: hidden;
+      // да плохое решение внешний отступ
+      margin-right: 16px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+  }
+  &__name {
+    font-family: 'Oxanium';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: #f5fbf2;
+  }
+  &__price {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #bdaac1;
+  }
+
+  &__count {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -40%;
+      transform: translateY(-50%);
+      height: 100%;
+      width: 3px;
+      background: #49374e;
+    }
+  }
+  &__num {
+    font-family: 'Oxanium';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: #f5fbf2;
+  }
+  &__amo {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #908294;
+  }
+
+  &__view-all {
+    margin: 84px auto 0;
+    padding: 24px 64px;
+    border: 1px solid #ffce4e;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+}
