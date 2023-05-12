@@ -108,6 +108,14 @@
       @media (max-width: 700px) {
         display: block;
       }
+      &.active {
+        display: none;
+      }
+      &_close {
+        &.active {
+          display: block;
+        }
+      }
     }
   }
 }

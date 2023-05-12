@@ -673,6 +673,10 @@ h6 {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -2602,11 +2606,20 @@ button.swiper-pagination-bullet {
     display: block;
   }
 }
+.header .main .menu.active {
+  display: none;
+}
+.header .main .menu_close.active {
+  display: block;
+}
 
 .first {
   padding-top: 37px;
   min-height: 100%;
   position: relative;
+  background-image: url("../img/bg-effect.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .first .container {
   position: relative;
@@ -2753,7 +2766,9 @@ button.swiper-pagination-bullet {
   }
 }
 .first__arrow-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -2931,6 +2946,9 @@ button.swiper-pagination-bullet {
 .auctions {
   overflow: hidden;
   padding-bottom: 80px;
+  background-image: url("../img/l-effect.png");
+  background-repeat: no-repeat;
+  background-position: 0 -50px;
 }
 @media (max-width: 600px) {
   .auctions-slider {
@@ -3099,6 +3117,9 @@ button.swiper-pagination-bullet {
 
 .how {
   padding-top: 185px;
+  background-image: url("../img/h-effec.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
 
 .how__title {
@@ -3209,6 +3230,11 @@ button.swiper-pagination-bullet {
   }
 }
 
+.popular {
+  background-image: url("../img/pc-effec.png");
+  background-repeat: no-repeat;
+  background-position: 0 -50px;
+}
 .popular .main {
   position: relative;
 }

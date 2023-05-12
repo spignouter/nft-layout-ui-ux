@@ -3,6 +3,10 @@
   min-height: 100%;
   position: relative;
 
+  background-image: url('../img/bg-effect.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
   .container {
     position: relative;
     z-index: 2;
@@ -146,7 +150,9 @@
   // }
 
   &__arrow-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 0;
     left: 50%;

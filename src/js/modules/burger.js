@@ -1,19 +1,25 @@
 const burgerTrigger = document.querySelector('.menu'),
   burgerClose = document.querySelector('.menu_close'),
   burgerItem = document.querySelector('.inner'),
-  body = document.querySelector('body')
-headerLink = document.querySelector('.links__link')
+  body = document.querySelector('body'),
+  headerLink = document.querySelectorAll('.links__link')
 
 burgerTrigger.addEventListener('click', (e) => {
-  burgerItem.classList.add('active')
-  body.classList.add('active')
-  burgerTrigger.style.display = 'none'
-  burgerClose.style.display = 'block'
+  toggleBurger()
 })
 
 burgerClose.addEventListener('click', (e) => {
-  burgerItem.classList.remove('active')
-  body.classList.remove('active')
-  burgerClose.style.display = 'none'
-  burgerTrigger.style.display = 'block'
+  toggleBurger()
 })
+headerLink.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    toggleBurger()
+  })
+})
+
+function toggleBurger() {
+  burgerItem.classList.toggle('active')
+  body.classList.toggle('active')
+  burgerTrigger.classList.toggle('active')
+  burgerClose.classList.toggle('active')
+}
