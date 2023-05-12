@@ -4,6 +4,15 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 56px 72px;
+
+    // расстояние между карточками топ креаторс
+    @media (max-width: 1100px) {
+      gap: 40px 20px;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
   }
   &__item {
     display: flex;
@@ -20,6 +29,20 @@
       // да плохое решение внешний отступ
       margin-right: 16px;
     }
+    // размер фотки креатора
+    @media (max-width: 1100px) {
+      padding: 20px;
+      img {
+        max-width: 65px;
+      }
+    }
+    @media (max-width: 750px) {
+      padding: 15px;
+      img {
+        max-width: 50px;
+        padding-right: 10px;
+      }
+    }
   }
 
   &__inner {
@@ -33,17 +56,29 @@
     font-family: 'Oxanium';
     font-weight: 600;
     font-size: 32px;
-    line-height: 35px;
+    line-height: 150%;
     letter-spacing: 0.05em;
     color: #f5fbf2;
+    @media (max-width: 1100px) {
+      font-size: 24px;
+    }
+    @media (max-width: 750px) {
+      font-size: 18px;
+    }
   }
   &__price {
     font-weight: 500;
     font-size: 24px;
-    line-height: 36px;
+    line-height: 150%;
     display: flex;
     align-items: center;
     color: #bdaac1;
+    padding: 8px;
+    @media (max-width: 1100px) {
+      padding: 0;
+
+      font-size: 18px;
+    }
   }
 
   &__count {
@@ -58,6 +93,11 @@
       width: 3px;
       background: #49374e;
     }
+    @media (max-width: 900px) {
+      &::before {
+        left: -15%;
+      }
+    }
   }
   &__num {
     font-family: 'Oxanium';
@@ -66,12 +106,20 @@
     line-height: 35px;
     letter-spacing: 0.05em;
     color: #f5fbf2;
+    padding-bottom: 6px;
+    @media (max-width: 1100px) {
+      padding-bottom: 0;
+      font-size: 24px;
+    }
   }
   &__amo {
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
     color: #908294;
+    @media (max-width: 1100px) {
+      font-size: 29px;
+    }
   }
 
   &__view-all {
@@ -83,5 +131,14 @@
     line-height: 35px;
     letter-spacing: 0.05em;
     display: block;
+    transition: all 0.3s;
+    &:hover {
+      background: #ffce4e;
+    }
+    @media (max-width: 500px) {
+      padding: 13px 58px;
+      margin: 48px auto 0;
+      font-size: 18px;
+    }
   }
 }

@@ -1,6 +1,18 @@
 .auctions {
   overflow: hidden;
   padding-bottom: 80px;
+  &-slider {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .swiper-wrapper {
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 45px;
+    }
+  }
 
   .item {
     background: #3d2942;
@@ -36,7 +48,11 @@
         font-size: 24px;
         line-height: 35px;
         letter-spacing: 0.02em;
-        color: #f5fbf2;
+        // color: #f5fbf2;
+        @media (max-width: 1300px) {
+          font-size: 18px;
+          padding: 10px 25px;
+        }
       }
     }
 
@@ -66,6 +82,9 @@
           font-size: 28px;
           line-height: 35px;
           color: #f5fbf2;
+          @media (max-width: 1300px) {
+            font-size: 20px;
+          }
         }
 
         &__nick {
@@ -85,12 +104,20 @@
         img {
           width: 28px;
           // хорошее свойство надо его запомнить
-          transform: scale(4);
+          //transform: scale(4);
         }
         span {
           font-size: 32px;
           line-height: 35px;
           color: #76607a;
+        }
+        @media (max-width: 700px) {
+          img {
+            width: 15px;
+          }
+          span {
+            font-size: 20px;
+          }
         }
       }
     }
@@ -104,6 +131,9 @@
         font-size: 24px;
         line-height: 35px;
         color: #c6bfc8;
+        @media (max-width: 700px) {
+          font-size: 18px;
+        }
       }
 
       &__price {
@@ -111,6 +141,9 @@
         font-weight: 700;
         font-size: 24px;
         line-height: 35px;
+        @media (max-width: 700px) {
+          font-size: 18px;
+        }
       }
     }
 
@@ -128,6 +161,13 @@
       line-height: 35px;
       letter-spacing: 0.05em;
       color: $white;
+      transition: all 0.3s;
+      &:hover {
+        background: darken(rgba(233, 215, 167, 0.1), 20);
+      }
+    }
+    @media (max-width: 700px) {
+      padding: 20px 15px;
     }
   }
 
@@ -141,6 +181,12 @@
     line-height: 35px;
     letter-spacing: 0.05em;
     display: block;
+
+    transition: all 0.3s;
+
+    &:hover {
+      background: #ffce4e;
+    }
   }
 }
 

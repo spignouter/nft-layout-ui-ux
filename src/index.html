@@ -1,3 +1,5 @@
+<!-- инструкции для aos: https://github.com/michalsnik/aos -->
+<!-- сайт с иконками: https://loon.site/icon/ -->
 @@include('html/head.html', { "title": "Главная" })
 <main>
   <div class="first">
@@ -5,14 +7,16 @@
     <div class="container">
       <div class="first-main">
         <div class="first-title">
-          <h1 class="h1">
+          <!-- для того что бы плавная анимация работала необходимо в html теги указать параметр data-aos и в зависимости от его значения будет выполняться анимация. -->
+          <h1 class="h1" data-aos="fade-right">
             Explore, Buy and Sell the <span class="">Best NFTs!</span>
           </h1>
-          <div class="first-btns">
+          <div class="first-btns" data-aos="fade-right">
             <button class="first-btns__btn">Explore</button>
             <button class="first-btns__btn2">Create</button>
           </div>
-          <div class="first-numbers">
+
+          <div class="first-numbers" data-aos="fade-right">
             <div class="first-numbers__number">
               <p>32k+</p>
               Artworks
@@ -27,6 +31,7 @@
             </div>
           </div>
         </div>
+
         <div class="first-nft">
           <div class="header">
             <div class="">
@@ -38,13 +43,27 @@
               <p class="header__number">25 hrs</p>
             </div>
           </div>
-          <div class="footer">
+          <div class="first-nft-footer">
             <div class="">
-              <p class="footer__title">Artist</p>
-              <p class="footer__nick">@wzard</p>
+              <p class="first-nft-footer__title">Artist</p>
+              <p class="first-nft-footer__nick">@wzard</p>
             </div>
-            <button class="footer__btn">Start Bid</button>
+            <button class="first-nft-footer__btn">Start Bid</button>
           </div>
+        </div>
+      </div>
+      <div class="first-numbers first-numbers_fake" data-aos="fade-right">
+        <div class="first-numbers__number">
+          <p>32k+</p>
+          Artworks
+        </div>
+        <div class="first-numbers__number">
+          <p>20k+</p>
+          Auctions
+        </div>
+        <div class="first-numbers__number">
+          <p>12k+</p>
+          Creators
         </div>
       </div>
     </div>
@@ -54,7 +73,7 @@
     </button>
   </div>
 
-  <div class="companies">
+  <div class="companies" data-aos="zoom-in-down">
     <div class="container">
       <div class="main">
         <img src="img/icons/icons.svg#company1" alt="company" />
@@ -68,7 +87,9 @@
   <div class="auctions">
     <div class="container">
       <div class="title-wrapper">
-        <h2 class="title title_purple"><span>Live Auctions</span></h2>
+        <h2 class="title title_purple" data-aos="fade-right">
+          <span>Live Auctions</span>
+        </h2>
       </div>
       <div class="swiper auctions-slider">
         <div class="swiper-wrapper">
@@ -191,7 +212,7 @@
           <img src="img/icons/icons.svg#arrow-right" alt="arrow-right" />
         </div>
       </div>
-      <button class="auctions__view-all">View All</button>
+      <button class="auctions__view-all" data-aos="fade-right">View All</button>
     </div>
   </div>
 
@@ -240,7 +261,7 @@
           <div class="swiper-wrapper">
             <!-- слайдер  -->
 
-            <div class="swiper-slide popular-slide">
+            <div class="swiper-slide auctions-slider popular-slide">
               <div class="item">
                 <div class="item__img">
                   <img src="img/popular/1.jpg" alt="" />
@@ -260,7 +281,7 @@
               </div>
             </div>
 
-            <div class="swiper-slide popular-slide">
+            <div class="swiper-slide auctions-slider popular-slide">
               <div class="item">
                 <div class="item__img">
                   <img src="img/popular/1.jpg" alt="" />
@@ -280,7 +301,7 @@
               </div>
             </div>
 
-            <div class="swiper-slide popular-slide">
+            <div class="swiper-slide auctions-slider popular-slide">
               <div class="item">
                 <div class="item__img">
                   <img src="img/popular/1.jpg" alt="" />
@@ -314,7 +335,7 @@
     <button class="auctions__view-all">View All</button>
   </div>
 
-  <div class="categories margin-bottom_80px">
+  <div id="explore" class="categories margin-bottom_80px">
     <div class="container">
       <div class="title-wrapper">
         <h2 class="title title_purple"><span>Explore By Categories</span></h2>
@@ -323,7 +344,7 @@
         <div class="swiper-wrapper">
           <!-- слайдер  -->
 
-          <div class="swiper-slide categories-slide">
+          <div class="swiper-slide auctions-slider categories-slide">
             <div class="item">
               <div class="item__img">
                 <img src="img/auctions/1.jpg" alt="" />
@@ -350,7 +371,7 @@
             </div>
           </div>
 
-          <div class="swiper-slide categories-slide">
+          <div class="swiper-slide auctions-slider categories-slide">
             <div class="item">
               <div class="item__img">
                 <img src="img/auctions/1.jpg" alt="" />
@@ -377,7 +398,7 @@
             </div>
           </div>
 
-          <div class="swiper-slide categories-slide">
+          <div class="swiper-slide auctions-slider categories-slide">
             <div class="item">
               <div class="item__img">
                 <img src="img/auctions/1.jpg" alt="" />
@@ -437,7 +458,7 @@
     </div>
   </div>
 
-  <div class="creators margin-bottom_80px">
+  <div id="creators" class="creators margin-bottom_80px">
     <div class="container">
       <div class="title-wrapper">
         <h2 class="title title_red"><span>Top Creators</span></h2>
@@ -504,7 +525,7 @@
     </div>
   </div>
 
-  <div class="subscribe">
+  <div id="community" class="subscribe">
     <div class="container">
       <div class="subscribe__main">
         <h2 class="subscribe__title">Ready for Next NFT Drop?</h2>

@@ -10,15 +10,26 @@
       width: 680px;
       margin: 0 auto;
       justify-content: space-between;
+      @media (max-width: 750px) {
+        width: 100%;
+      }
+      @media (max-width: 450px) {
+        flex-direction: column;
+        border: 0;
+      }
     }
   }
   &__title {
     font-family: 'Oxanium';
     font-weight: 700;
     font-size: 64px;
-    line-height: 130px;
+    line-height: 150%;
     text-align: center;
     color: #f5fbf2;
+    padding-bottom: 30px;
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
   }
   &__input {
     background: none;
@@ -32,6 +43,15 @@
     &::placeholder {
       color: #a48ea9;
     }
+    @media (max-width: 600px) {
+      font-size: 18px;
+      width: 150px;
+      padding: 15px 15px 15px 20px;
+    }
+    @media (max-width: 450px) {
+      width: 100%;
+      border: 1px solid #e7b226;
+    }
   }
   &__btn {
     display: block;
@@ -42,5 +62,15 @@
     font-size: 24px;
     line-height: 35px;
     color: #251928;
+    @media (max-width: 600px) {
+      font-size: 18px;
+      padding: 15px 0;
+    }
+    @media (max-width: 450px) {
+      width: 150px;
+      padding: 15px 35px;
+      margin: 32px auto 0;
+      font-size: 24px;
+    }
   }
 }

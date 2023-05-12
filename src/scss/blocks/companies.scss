@@ -1,12 +1,19 @@
 .companies {
-    margin-top: 250px;
-    margin: 250px 0 160px;
+  padding: 250px 0 160px;
   .main {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0px 50px;
     img {
       width: 20%;
+      @media (max-width: 850px) {
+        width: 30%;
+      }
     }
+  }
+  @media (max-width: 850px) {
+    padding: 70px 0 90px;
   }
 }

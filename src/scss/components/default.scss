@@ -77,6 +77,19 @@ button {
         background: $red;
       }
     }
+
+    @media (max-width: 800px) {
+      font-size: 34px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 30px;
+      &:after {
+        transform: translateY(-50%) translateX(-36%);
+        width: 84px;
+        height: 84px;
+      }
+    }
   }
 }
 
@@ -84,6 +97,9 @@ button {
   padding-top: 100px !important;
   // что бы свайпер выходил за пределы контейнера
   overflow: visible !important;
+  @media (max-width: 600px) {
+    padding-top: 0;
+  }
 }
 
 .margin-bottom_25px {
@@ -96,4 +112,11 @@ button {
 
 .margin-bottom_175px {
   margin-bottom: 175px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @media (max-width: 600px) {
+    display: none;
+  }
 }

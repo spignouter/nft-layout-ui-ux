@@ -79,6 +79,9 @@
             margin-right: 16px;
             width: 64px;
             height: 64px;
+            @media (max-width: 800px) {
+              width: 40px;
+            }
           }
 
           &__owner {
@@ -96,6 +99,9 @@
             color: #bdaac1;
             // херовое решение давать элементу внешний отступ, нужно переделать, на родительский блок назначить класс и задать следующие свойства gap: 5px; display: flex; flex-direction: column;
             // margin-top: 8px;
+            @media (max-width: 900px) {
+              font-size: 16px;
+            }
           }
         }
 
@@ -113,6 +119,10 @@
             color: #76607a;
           }
         }
+      }
+
+      @media (max-width: 900px) {
+        padding: 20px 15px;
       }
     }
 
@@ -135,6 +145,11 @@
       cursor: auto;
       pointer-events: none;
     }
+    // @media (max-width: 600) {
+    //   &::after {
+    //     display: none;
+    //   }
+    // }
   }
 
   &__view-all {
